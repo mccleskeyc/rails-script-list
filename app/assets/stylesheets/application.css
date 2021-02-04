@@ -1,15 +1,128 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+
+ 
+ h1 {
+    font-family: 'Bad Script', cursive;
+    color: #b86b77;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Bad Script', cursive;
+    color: #b86b77;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Bad Script', cursive;
+    color: #b86b77;
+
+}
+html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif, 600;
+}
+/* body */
+body {
+    color: (87, 87, 87);
+    font-family: 'Open Sans', sans-serif, 600;
+    font-weight: 350;
+    margin: 0;
+    background-color: #f1e1e3;
+    height: 100%
+}
+
+/* p */
+p {
+    color: (87, 87, 87);
+    font-family: 'Open Sans', sans-serif, 600;
+    font-weight: 350;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif, 600;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #f1e1e3;
+    color:rgb(87, 87, 87);
+    font-family: 'Open Sans', sans-serif, 600;
+  }
+  
+  th, a {
+ 
+  font-family: 'Open Sans', sans-serif, 600;
+  color: #b86b77;
+  
+  }
+
+  input[type=text], input[type=number], input[type=email], input[type=password] {
+    text-align: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #f1e1e3;
+    font-family: 'Open Sans', sans-serif, 600;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+ 
+  
+  
+  .row 
+  {
+      height: 100%;
+  }
+  
+  
+  /* Create three unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+    height: 100%;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 25%;
+
+    background-color: #f1e1e3;
+    height: 100%;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 50%;
+    justify-content: center;
+    background-color: #fdfbfa;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif, 600;
+  }
+
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 100%;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+      width: 100%;
+    }
+  }
+
+
+

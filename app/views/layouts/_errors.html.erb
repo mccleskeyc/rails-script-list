@@ -1,0 +1,8 @@
+<!-- flash errors -->
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+  <!-- flash notice: delete -->
+    <%= content_tag("p", flash[:notice]) if flash[:notice] %>

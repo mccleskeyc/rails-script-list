@@ -8,11 +8,11 @@ class ScriptsController < ApplicationController
     end
 
     def new
-        @script = Script.new
+        @script = current_user.scripts.build
     end
 
     def create
-        @script = Script.new(script_params)
+        @script = current_user.scripts.build(script_params)
         if @script.save
             redirect_to scripts_path
         else
@@ -45,6 +45,6 @@ class ScriptsController < ApplicationController
     end
 
     def script_params
-        params.require(:script).permit(:title, :department_id, :logline, department_attributes:[:name])
+        params.require(:script).permit(:title, :department_id, :user_id, :logline, department_attributes:[:name])
     end
 end

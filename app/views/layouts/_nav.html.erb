@@ -1,0 +1,45 @@
+<style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #B86B77;
+    }
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+        color: #fdfbfa;
+        font-family: 'Bad Script', cursive;
+        font-size: 18px;
+    }
+
+    li a:hover {
+    background-color: #b05a67;
+    }
+
+
+    body {
+        margin: 0;
+    }
+
+</style>
+
+<nav>
+    <ul>
+      <li><%= link_to("Home", root_path) %></li>
+      <li><%= link_to("Scripts", scripts_path) %></li>
+      <li><%= link_to("Add a Script", new_script_path) %></li>
+      <li><%= link_to("Log In", new_user_session_path) %> </li>
+      <li><%= link_to("Sign Up", new_user_registration_path ) %> </li>
+      <li><%= link_to("Log Out", destroy_user_session_path )%></li>
+    </ul>
+  </nav>

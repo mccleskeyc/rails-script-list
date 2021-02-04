@@ -1,10 +1,16 @@
 class DepartmentsController < ApplicationController
 
+    def index
+        @departments = Department.all
+    end
+
+    def show
+        @department = Department.find_by_id(params[:id])
+    end
+
+
     def new
         @department = Department.new
-    
-        @department.scripts.build
-        @department.scripts.build
         @department.scripts.build
       end
     
@@ -12,8 +18,9 @@ class DepartmentsController < ApplicationController
         @department = Department.new(department_params)
     
         if @department.save
-          redirect_to scripts_path
+          redirect_to departments_path
         else
+          flash.now[:error] = @department.errors.full_messages
           render :new
         end
       end
@@ -23,8 +30,8 @@ class DepartmentsController < ApplicationController
     
         def department_params
           params.require(:department).permit(
-            :name,
-            scripts_attributes: [:title, :logline]
+            :name, :script_id, :user_id,
+            scripts_attributes: [:title, :logline, :user_id],
           )
         end
     end

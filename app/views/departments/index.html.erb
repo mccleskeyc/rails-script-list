@@ -1,0 +1,9 @@
+<h1>List of All Formats</h1>
+
+<table>
+    <tr>
+    <% @departments.each do |department| %>
+        <td><%= link_to department.name, department_path(department), :class => "link_to_style" %></td>
+    </tr>
+    <% end %>
+</table>
