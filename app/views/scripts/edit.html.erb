@@ -1,0 +1,16 @@
+<h1>Edit <%= @script.title %></h1>
+
+<%= form_for @script do |f| %>
+    <div>
+        <%= f.label :title, "Title:"  %>
+        <%= f.text_field :title, :autocomplete => :off %>
+    </div>
+
+
+    <div>
+        <%= f.label :logline, "Logline:"  %>
+        <%= f.text_field :logline, :autocomplete => :off %>
+    </div>
+
+    <%= f.submit "Update Script" %>
+<% end %>

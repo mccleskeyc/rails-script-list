@@ -1,0 +1,20 @@
+<h1><%= @script.title %></h1>
+<table>
+    <tr>
+        <td><b>Title:</b></td>
+        <td><%= @script.title %></td>
+    </tr>
+
+    <tr>
+        <td><b>Logline:</b></td>
+        <td><%= @script.logline %></td>
+    </tr>
+
+    <tr>
+        <td><b>Format:</b></td>
+        <td><%= @script.department_name %></td>
+    </tr>
+</table>
+<br>
+<%= link_to "Edit", edit_script_path(@script) %>
+<%= link_to "Delete", script_path(@script), method: "delete" %>

@@ -1,0 +1,16 @@
+<h1>Scripts</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Logline</th>
+        <th>Type</th>
+    </tr>
+
+    <tr>
+    <% @scripts.each do |script| %>
+        <td><%= link_to script.title, script_path(script), :class => "link_to_style" %></td>
+        <td><%= script.logline %></td>
+        <td><%= script.department_name %></td>
+    </tr>
+    <% end %>
+</table>

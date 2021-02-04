@@ -1,0 +1,22 @@
+<h1>Add Format</h1>
+
+<%= form_for @department do |f| %>
+    <div>
+        <%= f.label :name, "Format:" %>
+        <%= f.text_field :name %>
+    </div>
+
+    <%= f.fields_for :scripts, @department.scripts do |s| %>
+        <div>
+            <%= s.label :title, "Title:" %>
+            <%= s.text_field :title %>
+        </div>
+
+        <div>
+            <%= s.label :logline, "Logline:" %>
+            <%= s.text_field :logline %>
+        </div>
+
+        <%= f.submit "Add Format" %>
+    <% end %>
+<% end %>
