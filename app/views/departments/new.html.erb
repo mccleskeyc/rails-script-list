@@ -3,20 +3,21 @@
 <%= form_for @department do |f| %>
     <div>
         <%= f.label :name, "Format:" %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :autocomplete => :off %>
     </div>
-
+        <br>
     <%= f.fields_for :scripts, @department.scripts do |s| %>
         <div>
             <%= s.label :title, "Title:" %>
-            <%= s.text_field :title %>
+            <%= s.text_field :title, :autocomplete => :off %>
         </div>
 
         <div>
             <%= s.label :logline, "Logline:" %>
-            <%= s.text_field :logline %>
+            <%= s.text_area :logline, :autocomplete => :off %>
         </div>
+            <br>
+    <% end %>
 
         <%= f.submit "Add Format" %>
-    <% end %>
 <% end %>
