@@ -15,5 +15,6 @@
     <div>
         <%= f.collection_select :department_id, Department.all, :id, :name, include_blank: "Select Format" %>
     </div>
+    <%= hidden_field_tag :user_id, current_user.id %>
     <%= f.submit "Add Script" %>
 <% end %>
