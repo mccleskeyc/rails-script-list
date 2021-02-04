@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #B86B77;
+    background-color: #18453B;
     }
 
     li {
@@ -18,12 +18,12 @@
     padding: 14px 16px;
     text-decoration: none;
         color: #fdfbfa;
-        font-family: 'Bad Script', cursive;
+        font-family: 'Merriweather', serif;
         font-size: 18px;
     }
 
     li a:hover {
-    background-color: #b05a67;
+    background-color: #266b5b;
     }
 
 
@@ -35,11 +35,17 @@
 
 <nav>
     <ul>
+    <!-- signed in -->
       <li><%= link_to("Home", root_path) %></li>
-      <li><%= link_to("Scripts", scripts_path) %></li>
+      <li><%= link_to("Reading List", scripts_path) %></li>
+      <li><%= link_to("Formats", departments_path) %></li>
       <li><%= link_to("Add a Script", new_script_path) %></li>
+      <li><%= link_to("Add a Format", new_department_path) %></li>
+
+      <li><%= link_to("Log Out", destroy_user_session_path )%></li>
+        <!--signed out-->
       <li><%= link_to("Log In", new_user_session_path) %> </li>
       <li><%= link_to("Sign Up", new_user_registration_path ) %> </li>
-      <li><%= link_to("Log Out", destroy_user_session_path )%></li>
+
     </ul>
   </nav>

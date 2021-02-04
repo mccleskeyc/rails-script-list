@@ -2,20 +2,20 @@
 
  
  h1 {
-    font-family: 'Bad Script', cursive;
-    color: #b86b77;
+    font-family: 'Merriweather', serif;
+    color: #18453b;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Bad Script', cursive;
-    color: #b86b77;
+    font-family: 'Merriweather', serif;
+    color: #18453b;
     text-align: center;
 }
 
 h3 {
-    font-family: 'Bad Script', cursive;
-    color: #b86b77;
+    font-family: 'Merriweather', serif;
+    color: #18453b;
 
 }
 html {
@@ -28,7 +28,7 @@ body {
     font-family: 'Open Sans', sans-serif, 600;
     font-weight: 350;
     margin: 0;
-    background-color: #f1e1e3;
+    background-color: #def4ef;
     height: 100%
 }
 
@@ -48,7 +48,7 @@ table {
   th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #f1e1e3;
+    border-bottom: 1px solid #def4ef;
     color:rgb(87, 87, 87);
     font-family: 'Open Sans', sans-serif, 600;
   }
@@ -56,7 +56,7 @@ table {
   th, a {
  
   font-family: 'Open Sans', sans-serif, 600;
-  color: #b86b77;
+  color: #18453b;
   
   }
 
@@ -67,7 +67,7 @@ table {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid #f1e1e3;
+    border-bottom: 2px solid #def4ef;
     font-family: 'Open Sans', sans-serif, 600;
   }
 
@@ -95,7 +95,7 @@ table {
   .column.side {
     width: 25%;
 
-    background-color: #f1e1e3;
+    background-color: #def4ef;
     height: 100%;
   }
   
@@ -103,7 +103,7 @@ table {
   .column.middle {
     width: 50%;
     justify-content: center;
-    background-color: #fdfbfa;
+    background-color: #fbfefd;
     height: 100%;
     font-family: 'Open Sans', sans-serif, 600;
   }

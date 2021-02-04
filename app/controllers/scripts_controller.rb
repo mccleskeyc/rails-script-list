@@ -1,14 +1,24 @@
 class ScriptsController < ApplicationController
+    before_action :find_department, only: [:index, :new, :create, :show] 
     before_action :find_script, only: [:show, :edit, :update, :destroy]
     def index
+        if @department
+            @scripts = @department.scripts
+        else
         @scripts = Script.all 
+        end
     end
 
     def show
     end
 
     def new
+        if @department 
+            @script = @department.scripts.build
+            render :new_department_script
+        else
         @script = current_user.scripts.build
+        end
     end
 
     def create
@@ -17,7 +27,11 @@ class ScriptsController < ApplicationController
             redirect_to scripts_path
         else
             flash.now[:error] = @script.errors.full_messages
+            if @department
+                render :new_department_script
+            else
             render :new
+            end
         end
     end
 
@@ -42,6 +56,12 @@ class ScriptsController < ApplicationController
     private
     def find_script
         @script = Script.find_by_id(params[:id])
+    end
+
+    def find_department
+        if params[:department_id]
+            @department = Department.find_by_id(params[:department_id])
+        end
     end
 
     def script_params

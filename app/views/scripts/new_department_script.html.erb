@@ -1,0 +1,15 @@
+<h1><%= "Add a New #{@department.name} Script" %></h1>
+
+<%= form_for [@department, @script] do |f| %>
+    <div>
+        <%= f.label :title, "Title:"  %>
+        <%= f.text_field :title, :autocomplete => :off %>
+    </div>
+
+    <div>
+        <%= f.label :logline, "Logline:"  %>
+        <%= f.text_field :logline, :autocomplete => :off %>
+    </div>
+    <%= f.hidden_field :department_id %>
+    <%= f.submit "Add Script" %>
+<% end %>
