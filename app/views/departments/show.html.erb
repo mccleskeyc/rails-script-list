@@ -13,5 +13,5 @@
     </tr>
 </table>
 <br>
-<%= link_to "Edit", edit_department_path(@department) %>
-<%= link_to "Delete", department_path(@department), method: "delete" %>
+
+<%= button_to "Delete", department_path(@department), :method => "delete" %>

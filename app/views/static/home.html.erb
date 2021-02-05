@@ -1,1 +1,9 @@
 <h1>Green Light</h1>
+<%= image_tag("/script.jpg", alt: "rss feed") %>
+<h2> Keep Track of What Your Team is Reading </h2>
+<p style="text-align:center"> With Green Light, your team can keep track of incoming scripts with ease. Every member can <%= link_to("add scripts", new_script_path) %> and their loglines so you can have easy access to a company-wide <%= link_to("list of scripts", scripts_path) %>. You can also keep track of scripts by their <%= link_to("format", departments_path) %>--never again will you have to sort through your files when asked for half-hour comedy samples. </p>
+
+<h2>Make It Yours</h2>
+<p style="text-align:center">
+Green Light is made to be tailored to your needs. Some companies may not need to read features while others may need highly specific and unique formats. With Green Light, you can easily <%= link_to("add your own formats", new_department_path) %> to the database and make it work for you.
+</p>

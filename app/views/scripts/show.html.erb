@@ -16,5 +16,6 @@
     </tr>
 </table>
 <br>
-<%= link_to "Edit", edit_script_path(@script) %>
-<%= link_to "Delete", script_path(@script), method: "delete" %>
+<%= button_to "Edit", edit_script_path(@script), :method => "get" %>
+<br>
+<%= button_to "Delete", script_path(@script), :method => "delete" %>
