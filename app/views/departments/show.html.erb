@@ -12,6 +12,5 @@
         <td><%= link_to "Full List Here", department_scripts_path(@department) %></td>
     </tr>
 </table>
-<br>
+<%= button_to "Add a Script", new_department_script_path(@department), :method => "get" %>
 
-<%= button_to "Delete", department_path(@department), :method => "delete" %>

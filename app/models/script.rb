@@ -8,4 +8,5 @@ class Script < ApplicationRecord
     def department_name
         self.department ? self.department.name : "Format Not Available"
     end
+
 end

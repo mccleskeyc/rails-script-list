@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-
+    before_action :require_login
     def index
         @departments = Department.all
     end
@@ -25,7 +25,6 @@ class DepartmentsController < ApplicationController
         end
       end
     
-    
       private
     
         def department_params
@@ -34,4 +33,10 @@ class DepartmentsController < ApplicationController
             scripts_attributes: [:title, :logline, :user_id],
           )
         end
+
+        def require_login
+            unless user_signed_in?
+              redirect_to new_user_session_path # halts request cycle
+            end
+          end
     end

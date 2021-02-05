@@ -1,12 +1,13 @@
 class ScriptsController < ApplicationController
+    before_action :require_login
     before_action :find_department, only: [:index, :new, :create, :show] 
     before_action :find_script, only: [:show, :edit, :update, :destroy]
     def index
-        if @department
-            @scripts = @department.scripts
-        else
-        @scripts = Script.all 
-        end
+            if @department
+                @scripts = @department.scripts
+            else
+            @scripts = Script.all 
+            end
     end
 
     def show
@@ -67,4 +68,10 @@ class ScriptsController < ApplicationController
     def script_params
         params.require(:script).permit(:title, :department_id, :user_id, :logline, department_attributes:[:name])
     end
+
+    def require_login
+        unless user_signed_in?
+          redirect_to new_user_session_path # halts request cycle
+        end
+      end
 end

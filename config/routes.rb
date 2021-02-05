@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :departments do
+  resources :departments, :path => 'formats' do
     resources :scripts, only: [:new, :create, :index]
   end
   root to: "static#home"
