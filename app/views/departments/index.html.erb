@@ -6,4 +6,6 @@
         <td><%= link_to department.name, department_path(department), :class => "link_to_style" %></td>
     </tr>
     <% end %>
+    
 </table>
+<%= button_to "Add a Format", new_department_path, :method => "get" %>
