@@ -1,0 +1,18 @@
+<%= form_for script do |f| %>
+    <div>
+        <%= f.label :title, "Title:"  %>
+        <%= f.text_field :title, :autocomplete => :off %>
+    </div>
+
+    <div>
+        <%= f.label :logline, "Logline:"  %>
+        <%= f.text_field :logline, :autocomplete => :off %>
+    </div>
+
+    <h3>Select Format</h3>
+    <div>
+        <%= f.collection_select :department_id, Department.all, :id, :name, include_blank: "Select Format" %>
+    </div>
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= f.submit button_name %>
+<% end %>
