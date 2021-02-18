@@ -2,6 +2,7 @@ class ScriptsController < ApplicationController
     before_action :require_login
     before_action :find_department, only: [:index, :new, :create, :show] 
     before_action :find_script, only: [:show, :edit, :update, :destroy]
+ 
     def index
         if @department
             @scripts = @department.scripts
@@ -57,6 +58,12 @@ class ScriptsController < ApplicationController
         redirect_to scripts_path
     end
 
+    def sort_loglines
+        @scripts = Script.order("LENGTH(logline) ASC").limit(3)
+    end
+
+  
+
     private
     def find_script
         @script = Script.find_by_id(params[:id])
@@ -77,4 +84,5 @@ class ScriptsController < ApplicationController
           redirect_to new_user_session_path 
         end
     end
+
 end

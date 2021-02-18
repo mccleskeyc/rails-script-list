@@ -9,4 +9,8 @@ class Script < ApplicationRecord
         self.department ? self.department.name : "Format Not Available"
     end
 
+    def order_by_length
+        Script.order("LENGTH(logline) ASC").limit(3)
+    end
+
 end
