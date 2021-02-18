@@ -17,7 +17,8 @@ class DepartmentsController < ApplicationController
       def create
         @department = Department.new(department_params)
     
-        if @department.save
+        if @department.valid? 
+          @department.save
           redirect_to departments_path
         else
           flash.now[:error] = @department.errors.full_messages
@@ -36,7 +37,7 @@ class DepartmentsController < ApplicationController
 
         def require_login
             unless user_signed_in?
-              redirect_to new_user_session_path # halts request cycle
+              redirect_to new_user_session_path 
             end
           end
     end

@@ -3,14 +3,15 @@ class ScriptsController < ApplicationController
     before_action :find_department, only: [:index, :new, :create, :show] 
     before_action :find_script, only: [:show, :edit, :update, :destroy]
     def index
-            if @department
-                @scripts = @department.scripts
-            else
+        if @department
+            @scripts = @department.scripts
+        else
             @scripts = Script.all 
-            end
+        end
     end
 
     def show
+        # require_login, # find_department, # find_script
     end
 
     def new
@@ -24,7 +25,8 @@ class ScriptsController < ApplicationController
 
     def create
         @script = current_user.scripts.build(script_params)
-        if @script.save
+        if @script.valid?
+            @script.save
             redirect_to scripts_path
         else
             flash.now[:error] = @script.errors.full_messages
@@ -37,6 +39,7 @@ class ScriptsController < ApplicationController
     end
 
     def edit
+        # require_login, # find_script
     end
 
     def update
@@ -71,7 +74,7 @@ class ScriptsController < ApplicationController
 
     def require_login
         unless user_signed_in?
-          redirect_to new_user_session_path # halts request cycle
+          redirect_to new_user_session_path 
         end
-      end
+    end
 end

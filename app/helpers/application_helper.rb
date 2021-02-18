@@ -26,7 +26,7 @@ module ApplicationHelper
                 content_tag("li") do
                     link_to("Log Out", destroy_user_session_path)
                 end 
-            else
+            else # is logged out
                 content_tag("li") do
                     link_to("Home", root_path)
                 end +

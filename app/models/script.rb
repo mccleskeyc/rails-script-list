@@ -1,7 +1,7 @@
 class Script < ApplicationRecord
     validates :title, presence: true, uniqueness: true
     belongs_to :department
-    belongs_to :user, optional: true
+    belongs_to :user
 
     accepts_nested_attributes_for :user, :department, reject_if: :all_blank
 
