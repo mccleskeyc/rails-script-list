@@ -59,7 +59,7 @@ class ScriptsController < ApplicationController
     end
 
     def sort_loglines
-        @scripts = Script.order("LENGTH(logline) ASC").limit(3)
+        @scripts = Script.order_by_length
     end
 
   
