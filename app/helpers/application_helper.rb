@@ -25,11 +25,7 @@ module ApplicationHelper
 
                 content_tag("li") do
                     link_to("Log Out", destroy_user_session_path)
-                end +
-
-                content_tag("li") do 
-                    link_to("Shortest Description", loglines_path)
-                end
+                end 
             else # is logged out
                 content_tag("li") do
                     link_to("Home", root_path)
@@ -38,7 +34,7 @@ module ApplicationHelper
                     link_to("Log In", new_user_session_path)
                 end + 
                 content_tag("li") do
-                    link_to("Sign Up", new_user_registration_path)
+                   
                 end
             end
           end

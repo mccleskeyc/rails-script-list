@@ -10,7 +10,7 @@ class Script < ApplicationRecord
     end
 
     scope :order_by_length, -> {
-        @scripts = Script.order("LENGTH(logline) ASC").limit(3)
+        Script.order("LENGTH(logline) ASC").limit(3)
     }   
 
 
